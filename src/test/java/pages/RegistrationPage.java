@@ -11,12 +11,12 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class RegistrationPage {
 
-    private final SelenideElement firstNameInput = $(("#firstName")),
-            lastNameInput = $(("#lastName")),
+    private final SelenideElement firstNameInput = $("#firstName"),
+            lastNameInput = $("#lastName"),
             genderWrapper = $("#genterWrapper"),
-            emailInput = $(("#userEmail")),
-            phoneNumberInput = $(("#userNumber")),
-            currentAddressInput = $(("#currentAddress")),
+            emailInput = $("#userEmail"),
+            phoneNumberInput = $("#userNumber"),
+            currentAddressInput = $("#currentAddress"),
             calendarInput = $("#dateOfBirthInput"),
             subjectInput = $("#subjectsInput"),
             hobbyWrapper = $("#hobbiesWrapper"),
