@@ -8,11 +8,11 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class TextBoxPage {
 
-    private final SelenideElement userNameInput = $(("#userName")),
-            userEmailInput = $(("#userEmail")),
-            currentAddressInput = $(("#currentAddress")),
-            permanentAddressInput = $(("#permanentAddress")),
-            submitButton = $(("#submit")),
+    private final SelenideElement userNameInput = $("#userName"),
+            userEmailInput = $("#userEmail"),
+            currentAddressInput = $("#currentAddress"),
+            permanentAddressInput = $("#permanentAddress"),
+            submitButton = $("#submit"),
             outputComponent = $("#output");
 
     public TextBoxPage openPage() {
