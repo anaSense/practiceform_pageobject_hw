@@ -2,19 +2,19 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import pages.TextBoxPage;
-
-import static utils.RandomUtils.*;
+import utils.RandomUtils;
 
 public class TextBoxTests extends TestBase {
 
     private final TextBoxPage textBoxPage = new TextBoxPage();
+    private final RandomUtils randomUtils = new RandomUtils();
 
     @Test
     void fillFormTest() {
-        String firstName = getFirstName();
-        String email = getEmail();
-        String currentAddress = getAddress();
-        String permanentAddress = getAddress();
+        String firstName = randomUtils.getFirstName();
+        String email = randomUtils.getEmail();
+        String currentAddress = randomUtils.getAddress();
+        String permanentAddress = randomUtils.getAddress();
 
         textBoxPage.openPage()
                 .setName(firstName)

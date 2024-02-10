@@ -2,29 +2,29 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
-
-import static utils.RandomUtils.*;
+import utils.RandomUtils;
 
 public class RegistrationFormTests extends TestBase {
 
-    private RegistrationPage registrationPage = new RegistrationPage();
+    private final RegistrationPage registrationPage = new RegistrationPage();
+    private final RandomUtils randomUtils = new RandomUtils();
 
     @Test
     void successfullyRegistrationTest() {
-        String firstName = getFirstName();
-        String lastName = getLastName();
-        String gender = getGender();
-        String email = getEmail();
-        String phone = getPhoneNumber(10);
-        String address = getAddress();
-        String year = String.valueOf(getRandomInt(1924, 2024));
-        String month = getMonth();
-        String day = getDay();
-        String subject = getSubject();
-        String hobby = getHobby();
-        String filename = getPicture();
-        String state = getState();
-        String city = getCity(state);
+        String firstName = randomUtils.getFirstName();
+        String lastName = randomUtils.getLastName();
+        String gender = randomUtils.getGender();
+        String email = randomUtils.getEmail();
+        String phone = randomUtils.getPhoneNumber(10);
+        String address = randomUtils.getAddress();
+        String year = randomUtils.getYear();
+        String month = randomUtils.getMonth();
+        String day = randomUtils.getDay();
+        String subject = randomUtils.getSubject();
+        String hobby = randomUtils.getHobby();
+        String filename = randomUtils.getPicture();
+        String state = randomUtils.getState();
+        String city = randomUtils.getCity(state);
 
         registrationPage.openPage()
                 .setFirstName(firstName)
@@ -54,13 +54,13 @@ public class RegistrationFormTests extends TestBase {
 
     @Test
     void onlyRequestedFieldsSuccessfullyRegistrationTest() {
-        String firstName = getFirstName();
-        String lastName = getLastName();
-        String gender = getGender();
-        String year = String.valueOf(getRandomInt(1924, 2024));
-        String month = getMonth();
-        String day = getDay();
-        String phone = getPhoneNumber(10);
+        String firstName = randomUtils.getFirstName();
+        String lastName = randomUtils.getLastName();
+        String gender = randomUtils.getGender();
+        String year = randomUtils.getYear();
+        String month = randomUtils.getMonth();
+        String day = randomUtils.getDay();
+        String phone = randomUtils.getPhoneNumber(10);
         registrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
@@ -82,10 +82,10 @@ public class RegistrationFormTests extends TestBase {
 
     @Test
     void incorrectPhoneNumberTest() {
-        String firstName = getFirstName();
-        String lastName = getLastName();
-        String gender = getGender();
-        String phone = getPhoneNumber(5);
+        String firstName = randomUtils.getFirstName();
+        String lastName = randomUtils.getLastName();
+        String gender = randomUtils.getGender();
+        String phone = randomUtils.getPhoneNumber(5);
         registrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
