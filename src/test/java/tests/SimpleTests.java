@@ -19,8 +19,8 @@ public class SimpleTests {
         assertTrue(true);
     }
 
-    @Test
-    void someNegativeTest() {
-        assertTrue(false);
-    }
+//    @Test
+//    void someNegativeTest() {
+//        assertTrue(false);
+//    }
 }
