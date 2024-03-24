@@ -1,6 +1,8 @@
 package tests;
 
+import helpers.Attach;
 import io.qameta.allure.*;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -14,6 +16,13 @@ public class RegistrationFormTests extends TestBase {
 
     private final RegistrationPage registrationPage = new RegistrationPage();
     private final RandomUtils randomUtils = new RandomUtils();
+
+    @AfterEach
+    void addAttachment() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+    }
 
     @Test
     @Feature("Registration form in demoqa")
