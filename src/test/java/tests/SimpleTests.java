@@ -20,7 +20,6 @@ public class SimpleTests {
     }
 
     @Test
-    @Disabled
     void someNegativeTest() {
         assertTrue(false);
     }
