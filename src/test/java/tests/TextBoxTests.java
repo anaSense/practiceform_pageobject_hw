@@ -1,15 +1,20 @@
 package tests;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Tag;
+import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 import pages.TextBoxPage;
 import utils.RandomUtils;
 
-public class TextBoxTests extends TestBase {
+public class TextBoxTests {
 
     private final TextBoxPage textBoxPage = new TextBoxPage();
     private final RandomUtils randomUtils = new RandomUtils();
+
+    static void beforeAll() {
+        Configuration.browserSize = "1920x1080";
+        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.pageLoadStrategy = "eager";
+    }
 
     @Test
     void fillFormTest() {
