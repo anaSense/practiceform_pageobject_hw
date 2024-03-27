@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Selenide;
 import helpers.Attach;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.AfterEach;
@@ -23,6 +24,8 @@ public class RegistrationFormTests extends TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
+
+        Selenide.closeWindow();
     }
 
     @Test
